@@ -235,11 +235,6 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                                                     <a href="#">
                                                         <i class="zmdi zmdi-account"></i>Account</a>
                                                 </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
-                                                
                                             </div>
                                             <div class="account-dropdown__footer">
                                                 <a href="login.html">

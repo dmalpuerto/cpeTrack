@@ -45,7 +45,7 @@ $num_rows_voterStatus = $valuesvoterStatus['total'];
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Project Fox</title>
+    <title>BMIS</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -222,12 +222,6 @@ $num_rows_voterStatus = $valuesvoterStatus['total'];
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
                                                         <i class="zmdi zmdi-account"></i>Account</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
-                                                
                                             </div>
                                             <div class="account-dropdown__footer">
 											
