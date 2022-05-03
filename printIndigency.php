@@ -1,6 +1,8 @@
 <html>
 <head>
-	<title>BARANGAY CLEARANCE SYSTEM</title>
+	<title>Certificate of Indigency</title>
+    <link rel="shortcut icon" type = "image/png" href="images/icon/dangcol.png">
+
 	<meta charset="UTF-8"> 
 	<meta name="viewport" content="width=device-width, initialscale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

@@ -45,7 +45,8 @@ $num_rows_voterStatus = $valuesvoterStatus['total'];
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>BMIS</title>
+    <title>Dashboard</title>
+    <link rel="shortcut icon" type = "image/png" href="images/icon/dangcol.png">
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -77,13 +78,11 @@ $num_rows_voterStatus = $valuesvoterStatus['total'];
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                <a href="#">
-                    <img src="images/icon/dangcol.png" height ="60" width="60" alt="BMIS" /></a> INFORMATION SYSTEM 
+                    <img src="images/icon/dangcol.png" height ="60" width="60" alt="BMIS" /></a>BRGY. DANGCOL 
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                      
                         <li>
                             <a href="index.php">
                                 <i class="fas fa-home"></i>Dashboard</a>
@@ -202,7 +201,7 @@ $num_rows_voterStatus = $valuesvoterStatus['total'];
                                             <img src="images/icon/User.png" alt="User" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">User Account</a>
+                                            <a class="js-acc-btn" href="#"></a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
@@ -212,10 +211,9 @@ $num_rows_voterStatus = $valuesvoterStatus['total'];
                                                     </a>
                                                 </div>
                                                 <div class="content">
-                                                    <h5 class="name">
-                                                        <a href="#">User Account</a>
+                                                    <h5 class="name">User Account</a>
                                                     </h5>
-                                                    <span class="welcome">Project Fox</span>
+                                                    <span class="welcome">BMIS </span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
@@ -244,7 +242,6 @@ $num_rows_voterStatus = $valuesvoterStatus['total'];
                     <div class="container-fluid">
                          <div class="row">
                             <div class="col-md-12">
-                                    <span>You are here:</span>
                             </div>
                         </div>
                      </div>
@@ -253,7 +250,7 @@ $num_rows_voterStatus = $valuesvoterStatus['total'];
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h1 class="title-4">Dashboard
+                                    <h1 class="title-4">Brgy. Dangcol Information System
                                     </h1>
                                     <hr class="line-separate">
                                     <br>

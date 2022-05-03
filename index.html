@@ -1,6 +1,27 @@
 <?php
 require_once('connectDB.php');
-$result=mysqli_query($mysqli, "SELECT * FROM residents");
+$sql="SELECT count(id) AS total FROM residents";
+$sqlfemale="SELECT count(id) AS total FROM residents where gender='Female'";
+$sqlmale="SELECT count(id) AS total FROM residents where gender='Male'";
+$sqlvoterStatus = "SELECT count(id) AS total FROM residents where voterStatus = 'Yes'";
+
+$result=mysqli_query($mysqli,$sql);
+$resultfemale=mysqli_query($mysqli,$sqlfemale);
+$resultmale=mysqli_query($mysqli,$sqlmale);
+$resultvoterStatus=mysqli_query($mysqli,$sqlvoterStatus);
+
+
+$values=mysqli_fetch_assoc($result);
+$valuesfemale=mysqli_fetch_assoc($resultfemale);
+$valuesmale=mysqli_fetch_assoc($resultmale);
+$valuesvoterStatus=mysqli_fetch_assoc($resultvoterStatus);
+
+
+
+$num_rows=$values['total'];
+$num_rows_female=$valuesfemale['total'];
+$num_rows_male=$valuesmale['total'];
+$num_rows_voterStatus = $valuesvoterStatus['total'];
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +45,8 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Project Fox</title>
+    <title>Dashboard</title>
+    <link rel="shortcut icon" type = "image/png" href="images/icon/dangcol.png">
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -57,33 +79,37 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="images/icon/dangcol.png" height ="60" width="60" alt="BMIS" /></a> PROJECT FOX 
+                    <img src="images/icon/dangcol.png" height ="60" width="60" alt="BMIS" /></a> Brgy. Dangcol 
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                      
                         <li>
-                            <a href="index.html">
+                            <a href="index.php">
                                 <i class="fas fa-home"></i>Dashboard</a>
                         </li>
                         <li>
                             <a href="resident.php">
                                 <i class="fas fa-user-circle"></i>Resident Information</a>
                         </li>
-                        <li>
-                            <a href="#">
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
                                 <i class="far fa-file-text"></i>Certificate Issuance</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="printClearance.php">Barangay Clearance</a>
+                                </li>
+                                <li>
+                                    <a href="printIndigency.php">Barangay Indigency</a>
+                                </li>
+                                
+                            </ul>
                         </li>
                         <li>
                             <a href="#">
-                                <i class="fas fa-users"></i>Account</a>
+                                <i class="fas fa-users"></i> Account</a>
                         </li>
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-gears"></i>Admin config</a>
-                        </li>
-                       
+                                              
 
                     </ul>
                 </nav>
@@ -196,15 +222,10 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
                                                         <i class="zmdi zmdi-account"></i>Account</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
-                                                
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
+											
+                                                <a href="login.html">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
                                             </div>
                                         </div>
@@ -223,7 +244,6 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                     <div class="container-fluid">
                          <div class="row">
                             <div class="col-md-12">
-                                    <span>You are here:</span>
                             </div>
                         </div>
                      </div>
@@ -232,7 +252,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h1 class="title-4">Dashboard
+                                    <h1 class="title-4">Brgy. Dangcol Information System
                                     </h1>
                                     <hr class="line-separate">
                                     <br>
@@ -241,6 +261,9 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                         </div>
                     </section>
          <!-- END WELCOME-->
+    
+
+
                     
          <!-- RECORDS-->    
                 <section class="statistic statistic2">
@@ -248,7 +271,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                     <div class="row">
                         <div class="col-md-6 col-lg-3">
                             <div class="statistic__item statistic__item--green">
-                                <h2 class="number">18</h2>
+                                <h2 class="number"><?php echo $num_rows; ?></h2>
                                 <span class="desc">Registered Population</span>
                                 <div class="icon">
                                      <a href="#">
@@ -259,7 +282,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                         </div>
                         <div class="col-md-6 col-lg-3">
                             <div class="statistic__item statistic__item--orange">
-                                <h2 class="number">10</h2>
+                                <h2 class="number"><?php echo $num_rows_voterStatus; ?></h2>
                                 <span class="desc">Registered Voters</span>
                                 <div class="icon2">
                                     <a href="#">
@@ -270,7 +293,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                         </div>
                         <div class="col-md-6 col-lg-3">
                             <div class="statistic__item statistic__item--blue">
-                                <h2 class="number">9</h2>
+                                <h2 class="number"><?php echo $num_rows_female; ?></h2>
                                 <span class="desc">Female</span>
                                 <div class="icon3">
                                    <a href="#">
@@ -281,14 +304,8 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                         </div>
                         <div class="col-md-6 col-lg-3">
                             <div class="statistic__item statistic__item--red">
-                                 
-                                <h2 class="number">
-                                    <?php echo rowCount($db, "SELECT * FROM 'resident' WHERE 'gender' = 'Male'")?>
-
-                                </h2>
+                                <h2 class="number"><?php echo $num_rows_male; ?></h2>
                                 <span class="desc">Male</span>
-                   
-
                                 <div class="icon4">
                                    <a href="#">
                                          <img src="images/icon/male.png" alt="male" height = "100" width="100"   />

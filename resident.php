@@ -54,7 +54,9 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
 
 
     <!-- Title Page-->
-    <title>Project Fox</title>
+    <title>Resident Information</title>
+    <link rel="shortcut icon" type = "image/png" href="images/icon/dangcol.png">
+
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -87,8 +89,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                <a href="#">
-                    <img src="images/icon/dangcol.png" height ="60" width="60" alt="BMIS" /></a> PROJECT FOX 
+                    <img src="images/icon/dangcol.png" height ="60" width="60" alt="BMIS" /></a> BRGY. DANGCOL
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
@@ -214,7 +215,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                                             <img src="images/icon/User.png" alt="User" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">User Account</a>
+                                            <a class="js-acc-btn" href="#"></a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
@@ -227,7 +228,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                                                     <h5 class="name">
                                                         <a href="#">User Account</a>
                                                     </h5>
-                                                    <span class="welcome">Project Fox</span>
+                                                    <span class="welcome">BMIS</span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
@@ -279,7 +280,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                                     <th>Edit</th>
                                     <th>Delete</th>
 
-                                      <th>Resident ID</th> 
+                                    <th>Resident ID</th> 
                                     <th>Image</th>
                                     <th>Last Name</th>
                                     <th>First Name</th>
